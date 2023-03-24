@@ -1,0 +1,91 @@
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: rgb(7, 243, 117);
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid black;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn-primary {
+        background-color: rgb(7, 243, 117);
+    }
+
+    .btn-danger {
+        background-color: red;
+    }
+
+    .table-header {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+</style>
+
+<h3 class="table-header">{{ titleView }}</h3>
+
+<h1>Quản lý sản phẩm</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Image</th>
+            <th>ID SP</th>
+            <th>Tên SP</th>
+            <th>Đơn giá SP</th>
+            <th>Màu sắc SP</th>
+            <th>Loại sản phẩm</th>
+            <th>Mã khách hàng</th>
+            <th>Tên khách hàng</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each SanPham }}
+        <tr>
+            <td>{{ sum @index 1 }}</td>
+            <td><img src="{{ this.imgsp }}" /></td>
+            <td>{{ this.masp }}</td>
+            <td>{{ this.tensp }}</td>
+            <td>{{ this.dongiasp }}</td>
+            <td>{{ this.mausacsp }}</td>
+            <td>{{ this.loaisanpham }}</td>
+            <td>{{ this.makhachhang }}</td>
+            <td>{{ this.tenkhachhang }}</td>
+            <td>
+                <a href="/user/edit/{{ this._id }}" class="btn btn-primary">Edit</a>
+                <a href="/user/deletesp/{{ this._id }}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<a href="/user/cmhome" class="btn btn-danger">Thêm sản phẩm</a>

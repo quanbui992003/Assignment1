@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Quản lý sản phẩm</title>
+	<!-- Thêm CSS của Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Thêm thư viện jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Thêm JavaScript của Bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>Quản lý sản phẩm</h2>
+		<form>
+			<div class="form-group">
+				<label for="masp">Mã sản phẩm:</label>
+				<input type="text" class="form-control" id="masp">
+			</div>
+			<div class="form-group">
+				<label for="tensp">Tên sản phẩm:</label>
+				<input type="text" class="form-control" id="tensp">
+			</div>
+			<div class="form-group">
+				<label for="dongia">Đơn giá:</label>
+				<input type="text" class="form-control" id="dongia">
+			</div>
+			<div class="form-group">
+				<label for="hinhanh">Hình ảnh:</label>
+				<input type="file" id="hinhanh">
+			</div>
+			<div class="form-group">
+				<label for="mausac">Màu sắc:</label>
+				<select class="form-control" id="mausac">
+					<option>Đen</option>
+					<option>Trắng</option>
+					<option>Đỏ</option>
+					<option>Xanh</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="loaisp">Loại sản phẩm:</label>
+				<input type="text" class="form-control" id="loaisp">
+			</div>
+			<div class="form-group">
+				<label for="makh">Mã khách hàng:</label>
+				<input type="text" class="form-control" id="mkh">
+</div>
+<div class="form-group">
+<label for="tenkh">Tên khách hàng:</label>
+<input type="text" class="form-control" id="tenkh">
+</div>
+<button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+<button type="submit" class="btn btn-primary">Sửa sản phẩm</button>
+<button type="submit" class="btn btn-danger">Xóa sản phẩm</button>
+</form>
+</div>
+
+</body>
+</html>

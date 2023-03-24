@@ -1,0 +1,54 @@
+<form action="/user/addproduct" method="POST" autocomplete="off">
+    <div class="container border p-4 mt-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <h1 class="text-center mb-4">them san pham</h1>
+                <input type="hidden" name="id" value="{{user._id}}" />
+                <div class="form-group">
+                    <label for="name">masp</label>
+                    <input type="text" class="form-control" id="masp" value="{{user.masp}}"
+                        placeholder="Enter your name" required name="masp">
+                </div>
+                <div class="form-group">
+                    <label for="name">tensp</label>
+                    <input type="name" class="form-control" id="tensp" value="{{user.tensp}}"
+                        placeholder="Enter your email" required name="tensp">
+                </div>
+                <div class="form-group">
+                    <label for="name">dongiasp</label>
+                    <input type="name" class="form-control" value="{{user.dongiasp}}" id="dongiasp"
+                        placeholder="Enter your password" required name="dongiasp">
+                </div>
+                <div class="form-group">
+                    <label for="name">Avatar</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="v" value="{{user.imgsp}}" required
+                            name="imgsp">
+                        <label class="custom-file-label" for="avatar">Choose file</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">mausacsp</label>
+                    <input type="name" class="form-control" value="{{user.mausacsp}}" id="mausacsp"
+                        placeholder="Enter your password" required name="mausacsp">
+                </div>
+                <div class="form-group">
+                    <label for="name">loaisanpham</label>
+                    <input type="name" class="form-control" value="{{user.loaisanpham}}" id="loaisanpham"
+                        placeholder="Enter your password" required name="loaisanpham">
+                </div>
+                <div class="form-group">
+                    <label for="name">makhachhang</label>
+                    <input type="name" class="form-control" value="{{user.makhachhang}}" id="makhachhang"
+                        placeholder="Enter your password" required name="makhachhang">
+                </div>
+                <div class="form-group">
+                    <label for="name">tenkhachhang</label>
+                    <input type="name" class="form-control" value="{{user.tenkhachhang}}" id="tenkhachhang"
+                        placeholder="Enter your password" required name="tenkhachhang">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
