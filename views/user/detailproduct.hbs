@@ -47,10 +47,29 @@
         margin-bottom: 20px;
     }
 </style>
-
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="display: {{display}};">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/user/chmhc">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/user/getAllUsers">user</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="/user/getAllsp">sanpham</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 <h3 class="table-header">{{ titleView }}</h3>
 
 <h1>Quản lý sản phẩm</h1>
+ <form class="d-flex" role="search" action="/user/searchproduct" style="width: 400px;margin: 20px;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchproduct">
+ </form>
 
 <table class="table">
     <thead>
@@ -80,7 +99,7 @@
             <td>{{ this.makhachhang }}</td>
             <td>{{ this.tenkhachhang }}</td>
             <td>
-                <a href="/user/edit/{{ this._id }}" class="btn btn-primary">Edit</a>
+                <a href="/user/editsp/{{ this._id }}" class="btn btn-primary">Edit</a>
                 <a href="/user/deletesp/{{ this._id }}" class="btn btn-danger">Delete</a>
             </td>
         </tr>

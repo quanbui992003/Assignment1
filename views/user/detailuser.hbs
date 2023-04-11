@@ -1,0 +1,85 @@
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: rgb(7, 243, 117);
+        color: rgb(203, 48, 48);
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid black;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: rgb(195, 24, 24);
+        text-decoration: none;
+    }
+
+    .btn-primary {
+        background-color: rgb(7, 243, 117);
+    }
+
+    .btn-danger {
+        background-color: red;
+    }
+
+    .table-header {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .a{
+
+    }
+</style>
+<h1>quan ly</h1>
+ <form class="d-flex" role="search" action="/user/search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="Search">
+ </form>
+
+<a href="cmhdangky" style="margin-left: 1000px;" class="btn btn-primary">dang ky</a>
+<a href="cmhdangnhap" class="btn btn-primary">dang nhap</a>
+<h3 class="table-header">{{titleView}}</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>Image</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+            <tr>
+                 <td><img src="" /></td>
+                 <td>{{Admin1.name}}</td>
+                <td>{{Admin1.email}}</td>
+                <td>{{Admin1.pass}}</td>
+                <td>
+                    <a href="/user/edituser/{{Admin1._id}}" class="btn btn-primary">Edit</a>
+                   
+            </tr>
+        
+    </tbody>
+</table>
+

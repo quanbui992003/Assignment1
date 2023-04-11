@@ -1,0 +1,93 @@
+<style>
+    .form-group{
+        font-size: 15px;
+        font-weight: bold;
+    }
+  
+</style>
+<form action="/user/updateproduct/{{sanpham._id}}?_method=PUT" method="POST" autocomplete="off" enctype="multipart/form-data">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="display: {{display}};">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/user/chmhc">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/user/getAllUsers">user</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="/user/getAllsp">sanpham</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="container border p-4 mt-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <h1 class="text-center mb-4">Update product</h1>
+                
+
+                <div class="form-group">
+                    <label for="masp">Mã sản phẩm</label>
+                    <input type="text" class="form-control" id="masp" value="{{sanpham.masp}}"
+                        required name="masp">
+                </div>
+                <div class="form-group">
+                    <label for="tensp">Tên sản phẩm</label>
+                    <input type="text" class="form-control" id="tensp" value="{{sanpham.tensp}}"
+                        required name="tensp">
+                </div>
+                <div class="form-group">
+                    <label for="dongiasp">Đơn giá sản phẩm</label>
+                    <input type="text" class="form-control" value="{{sanpham.dongiasp}}" id="dongiasp"
+                         required name="dongiasp">
+                </div>
+                <div class="form-group">
+                    <label for="imgsp">Hình ảnh sản phẩm</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="img-pre" value="{{sanpham.imgsp}}" required
+                            name="imgsp">
+                        <label class="custom-file-label" for="avatar" >Chọn file</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mausacsp">Màu sắc sản phẩm</label>
+                    <input type="text" class="form-control" value="{{sanpham.mausacsp}}" id="mausacsp"
+                        required name="mausacsp">
+                </div>
+                <div class="form-group">
+                    <label for="loaisanpham">Loại sản phẩm</label>
+                    <input type="text" class="form-control" value="{{sanpham.loaisanpham}}" id="loaisanpham"
+                        required name="loaisanpham">
+                </div>
+                <div class="form-group">
+                    <label for="makhachhang">Mã khách hàng</label>
+                    <input type="text" class="form-control" value="{{sanpham.makhachhang}}" id="makhachhang"
+                         required name="makhachhang">
+                </div>
+                <div class="form-group">
+                    <label for="tenkhachhang">Tên khách hàng</label>
+                    <input type="text" class="form-control" value="{{sanpham.tenkhachhang}}" id="tenkhachhang"
+                         required name="tenkhachhang">
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Lưu</button>
+
+                <script>
+                    const imgInput = document.getElementById('imgsp');
+                    const imgPreview = document.getElementById('img-pre');
+
+                    imgInput.addEventListener('change', () => {
+                        const file = imgInput.files[0];
+                        const reader = new FileReader();
+
+                        reader.addEventListener("load", function () {
+                            imgPreview.src = reader.result;
+                        }, false);
+
+                        if (file) {
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                </script>

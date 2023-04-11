@@ -1,0 +1,47 @@
+<form action="/user/updateuser1/{{user._id}}?_method=PUT" method="POST" autocomplete="off" enctype="multipart/form-data">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <h1>Update</h1>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" value="{{user.name}}" placeholder="Enter your name" required name="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" value="{{user.email}}" placeholder="Enter your email" required name="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" placeholder="Enter your password" required name="password" value="{{user.password}}">
+        </div>
+        <div class="form-group">
+          <label for="avatar">Avatar</label>
+          <div class="custom-file">
+            <img src="{{user.img}}" alt="" id="img-preview" style="height: 100px; width: 100px;">
+            <input type="file" class="custom-file-input" id="img" name="img">
+            <label class="custom-file-label" for="img">Choose file</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script>
+  const avatarInput = document.getElementById('img');
+  const imgPreview = document.getElementById('img-preview');
+  avatarInput.addEventListener('change', () => {
+    const file = avatarInput.files[0];
+    const reader = new FileReader();
+  
+    reader.addEventListener("load", function () {
+      imgPreview.src = reader.result;
+    }, false);
+  
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  });
+</script>

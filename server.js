@@ -1,20 +1,24 @@
 const express = require('express')
 const app = express()
-const port = 3000;
+const port = 9999;
 var path = require('path')
 var methods = require('method-override')
-const userController = require('./controler/AdminController')
-
+const userController = require('./controler/Admincontroller')
+var config = require('./config/database');
 const bodyParser = require("body-parser");
 //import {engine} from 'express-handlebars'
 const engine = require('express-handlebars')
-
+// var passport = require('./config/Passport');
+const passport = require('passport');
 app.engine('.hbs', engine.engine({ extname: "hbs", defaultLayout: 'main' ,
 helpers:{
+  user:()=> res.locals.user,
+    isAllow: () => res.locals.isAllow,
   sum:(a,b)=>a+b,
 }
 }
 ));
+
 app.set('view engine', '.hbs');
 app.set('views', './views');
 var mongoose = require('mongoose')
@@ -27,20 +31,12 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 
-mongoose.connect('mongodb://127.0.0.1:27017/quanlyquanao')
-  .then(function () {
-    console.log("thanh cong")
-  })
-  .catch(function (err) {
-    console.log("failed to connect")
+mongoose.connect(config.database, { 
+  useNewUrlParser: true,
+   useUnifiedTopology: true 
   })
 
-// app.get('/', (req, res) => {
-//     res.render('dangnhap', {
-
-//     });
-// });
-
+app.use(passport.initialize());
 
 app.use("/user", userController)
 

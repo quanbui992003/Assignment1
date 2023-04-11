@@ -2,16 +2,18 @@
     table {
         border-collapse: collapse;
         width: 100%;
+
     }
 
     th, td {
         text-align: left;
-        padding: 8px;
+      
+         padding: 20px;
     }
 
     th {
         background-color: rgb(7, 243, 117);
-        color: white;
+        color: rgb(203, 48, 48);
     }
 
     tr:nth-child(even) {
@@ -28,7 +30,7 @@
     .btn {
         padding: 5px 10px;
         border-radius: 5px;
-        color: white;
+        color: rgb(195, 24, 24);
         text-decoration: none;
     }
 
@@ -45,10 +47,40 @@
         font-weight: bold;
         margin-bottom: 20px;
     }
-</style>
+    .a{
 
-<h3 class="table-header">{{titleView}}</h3>
+    }
+    .h1{
+          font-weight: bold;
+          margin: 20px;
+    }
+</style>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="display: {{display}};">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/user/chmhc">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/user/getAllUsers">user</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="/user/getAllsp">sanpham</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 <h1>quan ly user</h1>
+ <form class="d-flex" role="search" action="/user/search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="Search" style="width: 400px;margin: 20px;">
+ </form>
+
+<a href="cmhdangky" style="margin-left: 1000px;margin-top: 10px;" class="btn btn-primary">đăng ký </a>
+<a href="cmhdangnhap" class="btn btn-primary"style="margin-top: 10px;">đăng xuat</a>
+<h3 class="table-header">{{titleView}}</h3>
+
 <table class="table">
     <thead>
         <tr>
@@ -60,7 +92,7 @@
         </tr>
     </thead>
     <tbody>
-        {{#each Admin }}
+        {{#each Admin}}
             <tr>
                 <td>{{sum @index 1}}</td>
                 <td><img src="{{this.img}}" /></td>
